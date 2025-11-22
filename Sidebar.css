@@ -1,0 +1,197 @@
+.sidebar {
+    background: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-right: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    height: 100vh;
+    transition: width 240ms ease, padding 240ms ease;
+    overflow: hidden;
+    padding-left: 12px;
+    padding-right: 8px;
+}
+
+.sidebar.open {
+    width: 15%;
+    min-width: 200px;
+    max-width: 320px;
+}
+
+.sidebar.closed {
+    width: 60px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.logo-section {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    position: relative;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    width: auto;
+    background: transparent;
+    padding: 0;
+}
+
+.logo-image {/*bwakanang shet dto ma aadjust yung picture*/
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.sidebar.closed .logo-box {
+    display: none;
+}
+
+.portal-title {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+.sidebar-toggle {
+    background: transparent;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.logo-section .sidebar-toggle {
+    position: static;
+}
+
+/* Hamburger nalang potang ina basta menu icon yan */
+.hamburger {
+    display: inline-block;
+    width: 22px;
+    height: 16px;
+    position: relative;
+}
+.hamburger span {
+    display: block;
+    height: 2px;
+    background: #333;
+    margin: 4px 0;
+    border-radius: 2px;
+}
+
+/* Cantered si hamburger pag naka close yung menu */
+
+.menu {
+    margin-top: 12px; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-item {
+    color: #555;
+    cursor: pointer;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    text-align: left;
+    padding: 8px 6px;
+    border-radius: 4px;
+}
+
+.menu-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #e0e0e0;
+    color: transparent;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.menu-icon-img {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.menu-item.active {
+    border-left: 4px solid black;
+    padding-left: 10px;
+    color: black;
+    background: rgba(43,119,255,0.08);
+}
+
+.sidebar.closed .menu-label,
+.sidebar.closed .portal-title {
+    display: none;
+}
+
+.sidebar.closed .menu-item {
+    text-align: center;
+    padding: 8px 0;
+}
+
+.signout .signout-btn {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 8px 6px;
+    cursor: pointer;
+}
+
+.sidebar.closed .signout .menu-label {
+    display: none;
+}
+
+.sidebar.closed .signout .menu-icon {
+    margin-right: 0;
+}
+
+.sidebar.closed .menu-item .menu-icon {
+    margin-right: 0;
+    display: inline-block;
+}
+.sidebar.closed .menu-item .menu-icon-img {
+    margin-right: 0;
+    display: inline-block;
+}
+
+.signout {
+    color: red;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* para dna umalis yung logout dyan na sya pakyu */
+.signout {
+    margin-top: auto;
+}
+
+@media (max-width: 640px) {
+    .sidebar.open {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 70%;
+        z-index: 10000;
+    }
+    .sidebar.closed {
+        width: 56px;
+    }
+}
